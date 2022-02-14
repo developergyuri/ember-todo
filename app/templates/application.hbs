@@ -1,3 +1,9 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div>
+  <h2>ToDo App</h2>
+  <hr >
+  <div class="navigation">
+    <LinkTo @route="index">Lista</LinkTo>
+    <LinkTo @route="add">Hozzáadás</LinkTo>
+  </div>
+  {{outlet}}
+</div>
