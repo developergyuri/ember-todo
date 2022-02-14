@@ -1,0 +1,77 @@
+.task-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 10px;
+  grid-auto-flow: row;
+  grid-template-areas: "Title Desc Status";
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-row.is-done {
+  background-color: rgba(50, 168, 82, 0.2);
+}
+
+.task-row > * {
+  display: flex;
+  align-items: center;
+}
+
+.task-row > p {
+  margin: 0;
+}
+
+.task-title {
+  grid-area: Title;
+}
+
+.task-description {
+  grid-area: Desc;
+}
+
+.task-status {
+  grid-area: Status;
+  justify-content: flex-end;
+}
+
+.is-done > .task-title,
+.is-done > .task-description {
+  text-decoration: line-through;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-status > button {
+  width: 50px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  border: none;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+}
+
+.task-status > button > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #19e083b0;
+  position: absolute;
+  left: 2.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.is-done > .task-status > button > div {
+  background-color: #e01919b0;
+  left: calc(100% - 20px - 2.5px);
+}
