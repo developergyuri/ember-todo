@@ -1,8 +1,10 @@
 <div>
-  <h2>ToDo App</h2>
+  <LinkTo @route="index">
+    <h2>ToDo App</h2>
+  </LinkTo>
   <hr >
   <div class="navigation">
-    <LinkTo @route="index">Lista</LinkTo>
+    <LinkTo @route="list">Lista</LinkTo>
     <LinkTo @route="add">Hozzáadás</LinkTo>
   </div>
   {{outlet}}

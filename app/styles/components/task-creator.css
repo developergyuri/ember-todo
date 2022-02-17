@@ -1,0 +1,38 @@
+.task-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-fields > label {
+  margin: 15px 0 10px 0;
+}
+
+.task-fields > input,
+.task-fields > textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.task-fields > input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.task-fields > button:disabled {
+  color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed;
+}
+
+.task-fields > button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease-in-out;
+}
