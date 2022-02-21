@@ -4,8 +4,11 @@
 <p class="task-description">
   {{this.data.description}}
 </p>
+<p class="task-timer">
+  {{this.remainingTime}}
+</p>
 <div class="task-status">
-  <button {{on "click" (fn this.isDoneHandler)}}>
+  <button {{on "click" (action "isDoneHandler")}}>
     <div>
       {{#if this.isDone}}
         {{fa-icon "close"}}

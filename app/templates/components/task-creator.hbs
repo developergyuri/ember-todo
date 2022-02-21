@@ -2,6 +2,14 @@
 <Input id="task-title" @type="text" placeholder="Cím" @value={{this.title}} />
 <label for="task-desc">Leírás:</label>
 <Textarea id="task-desc" rows="3" @value={{this.description}} />
+<label for="task-timer">Határidő:</label>
+<Input
+  type="datetime-local"
+  id="task-timer"
+  min={{this.deadline}}
+  value={{this.deadline}}
+  {{on "change" (action "datePickerHandler")}}
+/>
 <button
   {{on "click" (fn this.addNewHandler)}}
   disabled={{this.buttonIsDisabled}}

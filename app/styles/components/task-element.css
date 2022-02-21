@@ -1,10 +1,10 @@
 .task-row {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 10px;
   grid-auto-flow: row;
-  grid-template-areas: "Title Desc Status";
+  grid-template-areas: "Title Desc Timer Status";
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
@@ -33,12 +33,17 @@
   grid-area: Desc;
 }
 
+.task-timer{
+  grid-area: Timer;
+}
+
 .task-status {
   grid-area: Status;
   justify-content: flex-end;
 }
 
 .is-done > .task-title,
+.is-done > .task-timer,
 .is-done > .task-description {
   text-decoration: line-through;
   transition: all 0.3s ease-in-out;

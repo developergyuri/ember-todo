@@ -12,19 +12,14 @@ export default Route.extend({
         id: 0,
         title: "Teszt1",
         description: "Description 1",
+        deadline: new Date().setDate(new Date().getDate() + 1),
       }),
       Task.create({
         id: 1,
         title: "Teszt2",
         description: "Description 2",
+        deadline: new Date().setDate(new Date().getDate() + 2),
       }),
     ]);
   },
-  /* afterModel(model) {
-    if (!model.length) {
-      this.router.transitionTo("add");
-    } else {
-      this.router.transitionTo("list");
-    }
-  }, */
 });
