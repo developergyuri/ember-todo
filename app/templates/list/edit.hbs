@@ -1,0 +1,15 @@
+<div class="popup-wrapper">
+  <div class="editor">
+    <div class="editor-header">
+      <button {{on "click" (action "closeEditorHandler")}}>
+        {{fa-icon "close"}}
+      </button>
+    </div>
+    <div class="editor-content">
+      <label for="task-title">Feladat:</label>
+      <Input id="task-title" @type="text" @value={{this.model.title}} />
+      <label for="task-desc">Leírás:</label>
+      <Textarea id="task-desc" rows="3" @value={{this.model.description}} />
+    </div>
+  </div>
+</div>

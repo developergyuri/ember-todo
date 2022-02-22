@@ -1,0 +1,69 @@
+.popup-wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  inset: 0 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editor {
+  width: 50%;
+  min-width: 420px;
+  height: 500px;
+  background-color: #5c5c5c;
+  border-radius: 5px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  gap: 10px 0px;
+  grid-template-areas:
+    "Header"
+    "Content";
+}
+
+.editor-header {
+  grid-area: Header;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.editor-header > button {
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.editor-content {
+  grid-area: Content;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-content > label {
+  margin: 15px 0 10px 0;
+}
+
+.editor-content > input,
+.editor-content > textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.editor-content > button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease-in-out;
+}

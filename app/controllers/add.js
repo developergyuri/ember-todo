@@ -6,7 +6,7 @@ import Task from "../models/task";
 export default Controller.extend({
   router: service(),
 
-  addNewTask: action(function (value) {
+  addNewTaskHandler: action(function (value) {
     let { title, description, deadline } = value;
     let numOfElement = this.model.length;
     let newTask = Task.create({

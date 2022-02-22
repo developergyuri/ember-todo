@@ -1,6 +1,4 @@
 import Component from "@ember/component";
-import { action } from "@ember/object";
-import { computed } from "@ember/object";
 import { inject as service } from "@ember/service";
 import Task from "../models/task";
 
@@ -45,8 +43,10 @@ export default Component.extend({
       this.timer(deadline);
     }
 
-    this.router.on("routeWillChange", () => {
-      clearInterval(this.intervalId);
+    this.router.on("routeWillChange", (transition) => {
+      if (transition.from.parent.name !== transition.to.parent.name) {
+        clearInterval(this.intervalId);
+      }
     });
   },
 
@@ -57,6 +57,7 @@ export default Component.extend({
   data: Task.create({}),
   intervalId: null,
   remainingTime: "",
+  onClickToDelete() {},
   actions: {
     isDoneHandler: function () {
       this.toggleProperty("isDone");
@@ -67,6 +68,10 @@ export default Component.extend({
         const { deadline } = this.data;
         this.timer(deadline);
       }
+    },
+    deleteHandler: function () {
+      clearInterval(this.intervalId);
+      return this.onClickToDelete(this.data);
     },
   },
 });

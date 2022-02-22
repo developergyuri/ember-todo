@@ -18,3 +18,11 @@
     </div>
   </button>
 </div>
+<div class="task-actions">
+  <button {{on "click" (action "deleteHandler")}}>
+    {{fa-icon "trash"}}
+  </button>
+  <LinkTo @route="list.edit" @model={{this.data.id}}>
+    {{fa-icon "edit"}}
+  </LinkTo>
+</div>
